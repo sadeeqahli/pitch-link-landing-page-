@@ -38,11 +38,14 @@ const VisualShowcase: React.FC<VisualShowcaseProps> = ({
              {/* Overlay Gradient (Subtler now to not obscure image) */}
              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent z-10 pointer-events-none"></div>
              
-             {/* The Image - Fitted to container */}
+             {/* The Image - Fitted to container - LAZY LOADED */}
              <img 
                src={ASSETS.AD_IMG} 
                alt="Action shot" 
                className="w-full h-full object-contain z-0 transform group-hover:scale-105 transition-transform duration-700"
+               loading="lazy"
+               width="800"
+               height="500"
              />
              
              {/* Floating Info Card */}

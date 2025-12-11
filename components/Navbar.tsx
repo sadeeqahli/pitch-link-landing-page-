@@ -14,11 +14,32 @@ const Navbar: React.FC<NavbarProps> = ({ isOwnerView, onToggleView }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
+    let ticking = false;
+
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      const scrollY = window.scrollY;
+      const shouldBeScrolled = scrollY > 20;
+      
+      setIsScrolled(prev => {
+        // Only update state if the value has actually changed to prevent re-renders
+        if (prev !== shouldBeScrolled) {
+            return shouldBeScrolled;
+        }
+        return prev;
+      });
+      ticking = false;
     };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+
+    const onScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(handleScroll);
+        ticking = true;
+      }
+    };
+
+    // Use passive listener for better scroll performance
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
   // Manual smooth scroll handler
@@ -37,7 +58,7 @@ const Navbar: React.FC<NavbarProps> = ({ isOwnerView, onToggleView }) => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-300 ${
         isScrolled ? 'bg-brand-black/90 backdrop-blur-md border-b border-brand-surface' : 'bg-transparent'
       }`}
     >
@@ -55,6 +76,8 @@ const Navbar: React.FC<NavbarProps> = ({ isOwnerView, onToggleView }) => {
                <img 
                  src={ASSETS.LOGO} 
                  alt="PitchLink Logo" 
+                 width="48"
+                 height="48"
                  className="w-full h-full object-contain drop-shadow-[0_0_15px_rgba(11,218,81,0.6)]" 
                />
             </div>
@@ -117,7 +140,7 @@ const Navbar: React.FC<NavbarProps> = ({ isOwnerView, onToggleView }) => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-brand-surface border-b border-gray-800"
+            className="md:hidden bg-brand-surface border-b border-gray-800 overflow-hidden"
           >
             <div className="px-4 pt-2 pb-6 space-y-2">
               <a 

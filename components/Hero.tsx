@@ -23,17 +23,20 @@ const Hero: React.FC<HeroProps> = ({
   return (
     <section className="relative min-h-screen pt-28 pb-20 overflow-hidden flex items-center">
       {/* Background Image with Overlay */}
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0 z-0 bg-brand-black">
         <img 
           src={ASSETS.HERO_BG} 
           alt="Background" 
           className="w-full h-full object-cover opacity-30"
+          loading="eager"
+          // @ts-ignore - React 19 / Modern browsers support this
+          fetchPriority="high"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-brand-black via-brand-black/90 to-brand-black"></div>
         
-        {/* Abstract Grid Lines */}
+        {/* Abstract Grid Lines - Optimized with will-change if it was animated, but static is fast */}
         <div 
-            className="absolute inset-0 opacity-20"
+            className="absolute inset-0 opacity-20 pointer-events-none"
             style={{
                 backgroundImage: `linear-gradient(#0BDA51 1px, transparent 1px), linear-gradient(90deg, #0BDA51 1px, transparent 1px)`,
                 backgroundSize: '40px 40px',
