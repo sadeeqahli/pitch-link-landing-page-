@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
@@ -77,6 +76,14 @@ function App() {
   return (
     <div className="min-h-screen bg-brand-black text-white font-sans selection:bg-brand selection:text-black">
       <Navbar isOwnerView={isOwnerView} onToggleView={toggleView} />
+      
+      {/* Coming Soon Banner - Simple and clean */}
+      <div className="bg-brand-black/80 border-b border-brand/30 backdrop-blur-sm py-2 px-4 text-center">
+        <span className="text-brand text-sm font-medium">
+          COMING SOON
+        </span>
+      </div>
+      
       <main>
         <Hero 
           badgeText={viewData.hero.badgeText}

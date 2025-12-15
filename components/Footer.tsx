@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { ASSETS } from '../constants';
 import { Instagram, Twitter, Facebook, Mail } from 'lucide-react';
@@ -22,11 +21,15 @@ const Footer: React.FC<FooterProps> = ({ onOwnerClick }) => {
               Connecting football players with the best pitches. Book, play, and track your stats all in one place.
             </p>
             <div className="flex gap-4">
-                {[Instagram, Twitter, Facebook].map((Icon, i) => (
-                    <a key={i} href="#" className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-brand hover:text-black transition-all">
-                        <Icon size={18} />
-                    </a>
-                ))}
+                <a href="https://www.instagram.com/pitchlink_app" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-brand hover:text-black transition-all">
+                    <Instagram size={18} />
+                </a>
+                <a href="#" className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-brand hover:text-black transition-all">
+                    <Twitter size={18} />
+                </a>
+                <a href="#" className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-brand hover:text-black transition-all">
+                    <Facebook size={18} />
+                </a>
             </div>
           </div>
 
