@@ -17,6 +17,16 @@ export default defineConfig({
     // OR: allowedHosts: 'all'
   },
 
+  build: {
+    rollupOptions: {
+      input: {
+        main: '/index.html',
+        privacy: '/privacy-policy.html',
+        privacyHost: '/privacy-policy-host.html'
+      }
+    }
+  },
+
   resolve: {
     alias: {
       '@': path.resolve(__dirname, '.')

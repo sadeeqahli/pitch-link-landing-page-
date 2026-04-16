@@ -118,8 +118,8 @@ const Navbar: React.FC<NavbarProps> = ({ isOwnerView, onToggleView }) => {
                 </svg>
               </button>
               <div className="absolute right-0 mt-2 w-48 bg-brand-surface border border-gray-800 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-                <a href="/privacy-policy.html" className="block px-4 py-2 text-sm text-gray-300 hover:text-brand hover:bg-gray-800 rounded-t-lg">Players Privacy</a>
-                <a href="/privacy-policy-host.html" className="block px-4 py-2 text-sm text-gray-300 hover:text-brand hover:bg-gray-800 rounded-b-lg">Host Privacy</a>
+                <a href="/privacy-policy" className="block px-4 py-2 text-sm text-gray-300 hover:text-brand hover:bg-gray-800 rounded-t-lg">Players Privacy</a>
+                <a href="/privacy-policy-host" className="block px-4 py-2 text-sm text-gray-300 hover:text-brand hover:bg-gray-800 rounded-b-lg">Host Privacy</a>
               </div>
             </div>
             
@@ -179,13 +179,13 @@ const Navbar: React.FC<NavbarProps> = ({ isOwnerView, onToggleView }) => {
               <div className="pt-2 border-t border-gray-800 mt-2">
                 <p className="px-3 py-1 text-xs text-gray-500 font-semibold">LEGAL</p>
                 <a 
-                  href="/privacy-policy.html" 
+                  href="/privacy-policy" 
                   className="block px-3 py-2 text-base font-medium text-white hover:text-brand"
                 >
                   Players Privacy
                 </a>
                 <a 
-                  href="/privacy-policy-host.html" 
+                  href="/privacy-policy-host" 
                   className="block px-3 py-2 text-base font-medium text-white hover:text-brand"
                 >
                   Host Privacy
