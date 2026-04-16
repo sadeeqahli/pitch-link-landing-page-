@@ -48,6 +48,14 @@ const Footer: React.FC<FooterProps> = ({ onOwnerClick }) => {
           </div>
 
           <div>
+            <h4 className="text-white font-bold mb-6">Legal</h4>
+            <ul className="space-y-4 text-sm text-gray-400">
+                <li><a href="/privacy-policy.html" className="hover:text-brand transition-colors">Players App Privacy</a></li>
+                <li><a href="/privacy-policy-host.html" className="hover:text-brand transition-colors">Host App Privacy</a></li>
+            </ul>
+          </div>
+
+          <div>
             <h4 className="text-white font-bold mb-6">Company</h4>
             <ul className="space-y-4 text-sm text-gray-400">
                 <li><a href="#" className="hover:text-brand transition-colors">About Us</a></li>

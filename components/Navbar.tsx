@@ -110,6 +110,18 @@ const Navbar: React.FC<NavbarProps> = ({ isOwnerView, onToggleView }) => {
             >
               Reviews
             </a>
+            <div className="relative group">
+              <button className="text-gray-300 hover:text-brand transition-colors text-sm font-medium flex items-center gap-1">
+                Legal
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              <div className="absolute right-0 mt-2 w-48 bg-brand-surface border border-gray-800 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                <a href="/privacy-policy.html" className="block px-4 py-2 text-sm text-gray-300 hover:text-brand hover:bg-gray-800 rounded-t-lg">Players Privacy</a>
+                <a href="/privacy-policy-host.html" className="block px-4 py-2 text-sm text-gray-300 hover:text-brand hover:bg-gray-800 rounded-b-lg">Host Privacy</a>
+              </div>
+            </div>
             
             <motion.button
               whileHover={{ scale: 1.05 }}
@@ -164,6 +176,21 @@ const Navbar: React.FC<NavbarProps> = ({ isOwnerView, onToggleView }) => {
               >
                 Reviews
               </a>
+              <div className="pt-2 border-t border-gray-800 mt-2">
+                <p className="px-3 py-1 text-xs text-gray-500 font-semibold">LEGAL</p>
+                <a 
+                  href="/privacy-policy.html" 
+                  className="block px-3 py-2 text-base font-medium text-white hover:text-brand"
+                >
+                  Players Privacy
+                </a>
+                <a 
+                  href="/privacy-policy-host.html" 
+                  className="block px-3 py-2 text-base font-medium text-white hover:text-brand"
+                >
+                  Host Privacy
+                </a>
+              </div>
               <button 
                 onClick={() => {
                   onToggleView();
