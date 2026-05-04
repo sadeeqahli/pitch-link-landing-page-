@@ -1,14 +1,38 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Features from './components/Features';
 import VisualShowcase from './components/VisualShowcase';
 import Reviews from './components/Reviews';
 import Footer from './components/Footer';
+import PaymentVerification from './src/pages/PaymentVerification';
 import { PLAYER_FEATURES, OWNER_FEATURES, PLAYER_TESTIMONIALS, OWNER_TESTIMONIALS, ASSETS } from './constants';
 
 function App() {
   const [isOwnerView, setIsOwnerView] = useState(false);
+  const [currentPath, setCurrentPath] = useState(window.location.pathname);
+
+  useEffect(() => {
+    const handleLocationChange = () => {
+      setCurrentPath(window.location.pathname);
+    };
+
+    window.addEventListener('popstate', handleLocationChange);
+    return () => window.removeEventListener('popstate', handleLocationChange);
+  }, []);
+
+  // SEO Protection for hidden pages
+  useEffect(() => {
+    if (currentPath === '/payment-verification') {
+      const meta = document.createElement('meta');
+      meta.name = 'robots';
+      meta.content = 'noindex, nofollow';
+      document.head.appendChild(meta);
+      return () => {
+        document.head.removeChild(meta);
+      };
+    }
+  }, [currentPath]);
 
   const toggleView = () => {
     setIsOwnerView(!isOwnerView);
@@ -17,6 +41,11 @@ function App() {
   const switchToOwnerView = () => {
     setIsOwnerView(true);
   };
+
+  // Simple Router
+  if (currentPath === '/payment-verification') {
+    return <PaymentVerification />;
+  }
 
   // View Data Configuration
   const viewData = isOwnerView ? {
