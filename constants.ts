@@ -17,7 +17,13 @@ export const ASSETS = {
   OWNER_APP_SCREENSHOT: "https://i.postimg.cc/QtX8gfZC/IMG-7632.jpg",
 
   // 5. Advertising Image (Player kicking ball / Cinematic shot) - Used in Visual Showcase
-  AD_IMG: "https://i.postimg.cc/QtPgtPCr/IMG-6561.jpg"
+  AD_IMG: "https://i.postimg.cc/QtPgtPCr/IMG-6561.jpg",
+
+  // 6. Promo Video
+  PROMO_VIDEO: "/promo-video.mp4", // Local promo video
+
+  // 7. Video Cover Image
+  VIDEO_COVER: "/video-cover.jpg"
 };
 
 // --- PLAYER DATA ---

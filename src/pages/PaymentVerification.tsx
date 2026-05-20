@@ -12,10 +12,18 @@ export default function PaymentVerification() {
       const encodedReference = encodeURIComponent(reference);
       const encodedStatus = status ? encodeURIComponent(status) : "";
       
+      // Standard deep link
       const deepLink = `pitchlink://payment-verification?reference=${encodedReference}&status=${encodedStatus}`;
       
-      // Immediate redirect
+      // Attempt redirect
       window.location.href = deepLink;
+
+      // Fallback: If still on page after 1.5 seconds, try again or show manual button
+      const timer = setTimeout(() => {
+        window.location.assign(deepLink);
+      }, 1500);
+
+      return () => clearTimeout(timer);
     }
   }, []);
 

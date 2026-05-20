@@ -9,7 +9,7 @@
     <link rel="icon" type="image/png" href="https://i.postimg.cc/9fBXRkS5/E82A553F-F39D-47C2-83D9-353369F353E0.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script>
       tailwind.config = {
         theme: {
@@ -19,25 +19,26 @@
             },
             colors: {
               brand: {
-                DEFAULT: '#0BDA51', // Neon Green / Malachite matching the logo
+                DEFAULT: '#0BDA51', // Original App Theme Green
                 dark: '#00A838',
                 glow: '#0BDA51',
-                black: '#0a0a0a',
-                surface: '#121212'
+                black: '#050505',
+                surface: '#0A0A0A',
+                border: '#1A1A1A'
               }
             },
             animation: {
-              'float': 'float 6s ease-in-out infinite',
-              'pulse-glow': 'pulse-glow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+              'float-slow': 'float-slow 8s ease-in-out infinite',
+              'glow-pulse': 'glow-pulse 4s ease-in-out infinite',
             },
             keyframes: {
-              float: {
-                '0%, 100%': { transform: 'translateY(0)' },
-                '50%': { transform: 'translateY(-20px)' },
+              'float-slow': {
+                '0%, 100%': { transform: 'translateY(0) scale(1)' },
+                '50%': { transform: 'translateY(-10px) scale(1.02)' },
               },
-              'pulse-glow': {
-                '0%, 100%': { opacity: 1, boxShadow: '0 0 20px #0BDA51' },
-                '50%': { opacity: .5, boxShadow: '0 0 10px #0BDA51' },
+              'glow-pulse': {
+                '0%, 100%': { opacity: 0.3 },
+                '50%': { opacity: 0.6 },
               }
             }
           },
@@ -47,23 +48,24 @@
     <style>
       html {
         scroll-behavior: smooth;
-        /* Ensure there's padding at the top when scrolling to an ID so the navbar doesn't cover content */
-        scroll-padding-top: 100px;
+        scroll-padding-top: 80px;
       }
       body {
         background-color: #050505;
-        color: #ffffff;
+        color: #F3F4F6;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
       }
       /* Custom Scrollbar */
       ::-webkit-scrollbar {
-        width: 10px;
+        width: 8px;
       }
       ::-webkit-scrollbar-track {
-        background: #0a0a0a;
+        background: #050505;
       }
       ::-webkit-scrollbar-thumb {
-        background: #333;
-        border-radius: 5px;
+        background: #1A1A1A;
+        border-radius: 4px;
       }
       ::-webkit-scrollbar-thumb:hover {
         background: #0BDA51;

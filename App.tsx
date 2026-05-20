@@ -106,13 +106,6 @@ function App() {
     <div className="min-h-screen bg-brand-black text-white font-sans selection:bg-brand selection:text-black">
       <Navbar isOwnerView={isOwnerView} onToggleView={toggleView} />
       
-      {/* Coming Soon Banner - Simple and clean */}
-      <div className="bg-brand-black/80 border-b border-brand/30 backdrop-blur-sm py-2 px-4 text-center">
-        <span className="text-brand text-sm font-medium">
-          COMING SOON
-        </span>
-      </div>
-      
       <main>
         <Hero 
           badgeText={viewData.hero.badgeText}
@@ -120,6 +113,7 @@ function App() {
           titleLine2={viewData.hero.titleLine2}
           subtitle={viewData.hero.subtitle}
           appScreenshot={viewData.hero.appScreenshot}
+          appStoreLink={isOwnerView ? "https://apps.apple.com/ng/app/pitchlink-host/id6762392155" : "https://apps.apple.com/ng/app/pitchlink/id6762310388"}
         />
         <Features 
           features={viewData.features.list}
