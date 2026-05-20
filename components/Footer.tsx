@@ -57,10 +57,10 @@ const Footer: React.FC<FooterProps> = ({ onOwnerClick }) => {
           <div>
             <h4 className="text-white font-semibold mb-6">Company</h4>
             <ul className="space-y-4 text-sm text-gray-400 font-light">
-                <li><a href="#" className="hover:text-brand transition-colors">About Us</a></li>
-                <li><a href="#" className="hover:text-brand transition-colors">Careers</a></li>
-                <li><a href="#" className="hover:text-brand transition-colors">Blog</a></li>
-                <li><a href="#" className="hover:text-brand transition-colors">Contact</a></li>
+                <li><a href="/about-us.html" className="hover:text-brand transition-colors">About Us</a></li>
+                <li><a href="/careers.html" className="hover:text-brand transition-colors">Careers</a></li>
+                <li><a href="/blog.html" className="hover:text-brand transition-colors">Blog</a></li>
+                <li><a href="mailto:pitchlinkapp@gmail.com" className="hover:text-brand transition-colors">Contact</a></li>
             </ul>
           </div>
 
