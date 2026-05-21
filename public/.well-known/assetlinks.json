@@ -1,0 +1,14 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.sadeeqahli.pitchlink",
+      "sha256_cert_fingerprints": [
+        "A0:70:53:D5:06:32:A7:ED:8B:29:F5:49:B2:50:E9:85:A7:BA:FF:33:06:2F:1D:26:AB:69:E8:72:2F:B5:33:C7"
+      ]
+    }
+  }
+]
