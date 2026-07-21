@@ -23,7 +23,11 @@ export const ASSETS = {
   PROMO_VIDEO: "/promo-video.mp4", // Local promo video
 
   // 7. Video Cover Image
-  VIDEO_COVER: "/video-cover.jpg"
+  VIDEO_COVER: "/video-cover.jpg",
+
+  // 8. Founders Images
+  SADEEQ_IMG: "https://plain-weur-prod-public.komododecks.com/202607/21/vf9EI5rKCa8TANj30zzy/image.jpg",
+  AIMAN_IMG: "https://plain-weur-prod-public.komododecks.com/202607/21/YAKCxke49CDUMaPQr8SZ/image.jpg"
 };
 
 // --- PLAYER DATA ---

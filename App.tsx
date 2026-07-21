@@ -3,6 +3,7 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Features from './components/Features';
 import VisualShowcase from './components/VisualShowcase';
+import Founders from './components/Founders';
 import Reviews from './components/Reviews';
 import Footer from './components/Footer';
 import PaymentVerification from './src/pages/PaymentVerification';
@@ -114,6 +115,7 @@ function App() {
           subtitle={viewData.hero.subtitle}
           appScreenshot={viewData.hero.appScreenshot}
           appStoreLink={isOwnerView ? "https://apps.apple.com/ng/app/pitchlink-host/id6762392155" : "https://apps.apple.com/ng/app/pitchlink/id6762310388"}
+          playStoreLink={isOwnerView ? "https://play.google.com/store/apps/details?id=com.pitchlink.host" : "https://play.google.com/store/apps/details?id=com.sadeeqahli.pitchlink"}
         />
         <Features 
           features={viewData.features.list}
@@ -128,13 +130,17 @@ function App() {
           description={viewData.showcase.description}
           listItems={viewData.showcase.listItems}
         />
+        <Founders />
         <Reviews 
           testimonials={viewData.reviews.list}
           titleNormal={viewData.reviews.titleNormal}
           titleHighlight={viewData.reviews.titleHighlight}
         />
       </main>
-      <Footer onOwnerClick={switchToOwnerView} />
+      <Footer 
+        onOwnerClick={switchToOwnerView} 
+        playStoreLink={isOwnerView ? "https://play.google.com/store/apps/details?id=com.pitchlink.host" : "https://play.google.com/store/apps/details?id=com.sadeeqahli.pitchlink"}
+      />
     </div>
   );
 }

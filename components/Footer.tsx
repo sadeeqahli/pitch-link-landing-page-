@@ -4,9 +4,10 @@ import { Instagram, Twitter, Facebook, Mail } from 'lucide-react';
 
 interface FooterProps {
   onOwnerClick: () => void;
+  playStoreLink: string;
 }
 
-const Footer: React.FC<FooterProps> = ({ onOwnerClick }) => {
+const Footer: React.FC<FooterProps> = ({ onOwnerClick, playStoreLink }) => {
   return (
     <footer className="bg-[#050505] border-t border-brand-border pt-16 pb-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -37,7 +38,7 @@ const Footer: React.FC<FooterProps> = ({ onOwnerClick }) => {
             <h4 className="text-white font-semibold mb-6">Product</h4>
             <ul className="space-y-4 text-sm text-gray-400 font-light">
                 <li><a href="#features" className="hover:text-brand transition-colors">Features</a></li>
-                <li><a href="https://play.google.com/store" target="_blank" rel="noreferrer" className="hover:text-brand transition-colors">Download App</a></li>
+                <li><a href={playStoreLink} target="_blank" rel="noreferrer" className="hover:text-brand transition-colors">Download App</a></li>
                 <li>
                   <button onClick={(e) => { e.preventDefault(); onOwnerClick(); window.scrollTo({top:0, behavior:'smooth'}); }} className="hover:text-brand transition-colors text-left">
                     For Venue Owners

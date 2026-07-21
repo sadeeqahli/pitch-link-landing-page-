@@ -10,6 +10,7 @@ interface HeroProps {
   subtitle: string;
   appScreenshot?: string; // Kept for interface compatibility but not used
   appStoreLink: string;
+  playStoreLink: string;
 }
 
 const Hero: React.FC<HeroProps> = ({ 
@@ -17,7 +18,8 @@ const Hero: React.FC<HeroProps> = ({
   titleLine1, 
   titleLine2, 
   subtitle,
-  appStoreLink
+  appStoreLink,
+  playStoreLink
 }) => {
   return (
     <section className="relative min-h-screen pt-28 pb-20 overflow-hidden flex items-center bg-[#050505]">
@@ -84,7 +86,7 @@ const Hero: React.FC<HeroProps> = ({
             <div className="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start">
               {/* Google Play Button */}
               <motion.a 
-                href="https://play.google.com/store"
+                href={playStoreLink}
                 target="_blank"
                 rel="noreferrer"
                 whileHover={{ scale: 1.02, y: -2 }}
